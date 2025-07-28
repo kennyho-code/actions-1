@@ -8,7 +8,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: List and Read files
+      - name: Install cowsay
+        run: sudo apt-get update && sudo apt-get install -y cowsay
+
+      - name: Generate ASCII Artwork
         run: |
-          ls -ltra
-          cat README.md
+          cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
+          cat dragon.txt
