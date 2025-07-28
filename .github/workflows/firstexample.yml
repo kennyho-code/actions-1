@@ -9,5 +9,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: List and Read files
-        run: ls -ltra
+        run: |
+          ls -ltra
           cat README.md
