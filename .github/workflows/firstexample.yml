@@ -1,5 +1,5 @@
 name: My First Workflow
-on: push
+on: {}
 
 jobs:
   build_job_1:
