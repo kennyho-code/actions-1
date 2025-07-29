@@ -7,10 +7,15 @@ jobs:
     steps:
       - name: Install Cowsay Program
         run: sudo apt-get install cowsay -y
+
       - name: Execute Cowsay Command
         run: cowsay -f dragon "Run for cover, I am a DRAGON... RAWR" >> dragon.txt
-      - name: Sleep for 30 seconds
-        run: sleep 30
+
+      - name: Upload Dragon text file
+        uses: actions/upload-artifact@v3
+        with:
+          name: dragon-text-file
+          path: dragon.txt
 
   test_job_2:
     needs: build_job_1
